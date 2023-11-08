@@ -1,0 +1,18 @@
+include "/etc/bind/dhcp1-ns1.key";
+
+zone "example.lan" {
+	type master;
+	file "/var/lib/bind/db.example.lan"; // Moved my zone files into /var/lib/bind 'cause they'll be updating dynamically
+//	key "dhcp1-ns1";
+	update-policy {
+	grant dhcp1-ns1 wildcard *.example.lan A DHCID;
+	};
+};
+zone "168.192.in-addr.arpa" {
+	type master;
+	file "/var/lib/bind/db.192.168.zone";
+//	key "dhcp1-ns1";
+	update-policy {
+	grant dhcp1-ns1 wildcard *.168.192.in-addr.arpa PTR DHCID;
+	};
+};
