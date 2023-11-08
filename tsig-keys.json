@@ -1,0 +1,7 @@
+"tsig-keys": [
+	{
+	"name": "dhcp1-ns1",
+	"algorithm": "hmac-sha256",
+	"secret": "pzH8KuZYqv0mEjKD+P9F9r2Upqt7GCyW+dGNw/CJUNc="
+	}
+]
